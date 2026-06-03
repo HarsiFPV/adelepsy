@@ -1,0 +1,256 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { MapPin, Phone, Mail, CreditCard, Banknote, XCircle } from "lucide-react";
+import heroTexture from "@/assets/hero-texture.jpg";
+import cabinetInteriorAsset from "@/assets/cabinet-bureau.jpeg.asset.json";
+import cabinetExteriorAsset from "@/assets/cabinet-exterieur.jpeg.asset.json";
+import adelePortraitAsset from "@/assets/adele-portrait.jpg.asset.json";
+const cabinetInterior = cabinetInteriorAsset.url;
+const cabinetExterior = cabinetExteriorAsset.url;
+const adelePortrait = adelePortraitAsset.url;
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Adèle PINCEMAILLE — Psychologue clinicienne à Vendenheim" },
+      {
+        name: "description",
+        content:
+          "Adèle PINCEMAILLE, psychologue clinicienne à Vendenheim. Présentation, public accompagné, tarifs et contact.",
+      },
+    ],
+  }),
+  component: HomePage,
+});
+
+function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-border/60">
+        <img
+          src={heroTexture}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
+        <div className="container-narrow relative py-20 sm:py-28 text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent">CABINET AU PÔLE SANTÉ DE VENDENHEIM</p>
+          <h1 className="mt-6 font-serif text-5xl sm:text-6xl text-foreground leading-tight">
+            Un espace de parole,<br />
+            <em className="text-accent not-italic">d'écoute et de soin.</em>
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-muted-foreground leading-relaxed text-xl">
+            <span className="font-semibold text-foreground">Adèle PINCEMAILLE</span>, <span className="font-semibold text-foreground">psychologue clinicienne</span>.<br />
+            Accompagnement des adultes, des adolescents et des enfants à partir de 12 ans.
+          </p>
+        </div>
+      </section>
+
+      {/* Présentation */}
+      <section id="presentation" className="container-narrow py-20 sm:py-28 scroll-mt-24">
+        <div className="grid gap-12 lg:gap-16 lg:grid-cols-[1fr_minmax(280px,360px)] items-start">
+          <div>
+            <h2 className="mt-4 font-serif text-4xl sm:text-5xl text-foreground">
+              Présentation
+            </h2>
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/85 text-justify">
+              <p>
+                Psychologue clinicienne diplômée de l'Université de Strasbourg depuis 2023, je suis titulaire du Master II de Psychopathologie, psychologie clinique et psychanalyse.
+              </p>
+              <p>
+                Une grande partie de ma pratique s’exerce en libéral, où je propose des consultations de psychothérapie et réalise des examens psychologiques judiciaires. En parallèle, je poursuis une activité à l’hôpital psychiatrique (EPSAN), au sein d’une équipe mobile accompagnant des personnes en situation de précarité.
+              </p>
+              <p>
+                Mon parcours m'a également amenée à travailler en institution auprès d'adolescents en voie de radicalisation ainsi que dans le domaine de la protection de l'enfance. Ces expériences, complétées par ma pratique en psychiatrie, nourrissent aujourd'hui ma pratique clinique.
+              </p>
+              <p>
+                Afin de proposer un accompagnement ajusté à chaque personne que je reçois, mon travail s'appuie également sur une analyse personnelle et une supervision régulière.
+              </p>
+              <p>
+                Ma pratique s’inscrit dans le respect du Code de déontologie des psychologues, qui constitue le cadre éthique de mon travail.
+              </p>
+              <p>
+                Je suis inscrite au Répertoire Partagé des Professionnels de Santé (RPPS) sous le n° 10009429126.
+              </p>
+            </div>
+          </div>
+          <div className="lg:sticky lg:top-24 mx-auto w-full max-w-xs lg:max-w-none">
+            <img
+              src={adelePortrait}
+              alt="Portrait d'Adèle Pincemaille, psychologue clinicienne"
+              className="w-full h-auto rounded-lg object-cover shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Pour qui */}
+      <section id="pour-qui" className="border-t border-border/60 scroll-mt-24">
+        <article className="container-narrow py-20 sm:py-28">
+          <header className="text-center max-w-2xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent">Pour qui ?</p>
+            <h2 className="mt-4 font-serif sm:text-6xl text-foreground text-4xl">À qui je m'adresse</h2>
+          </header>
+
+          <div className="mt-16 rounded-lg border border-border/60 bg-secondary/40 p-8 sm:p-10 space-y-5 text-base leading-relaxed text-foreground/85 text-justify">
+            <p>
+              J’accompagne en psychothérapie individuelle les personnes qui ont plus de 12 ans.
+            </p>
+            <p>
+              Les consultations s’adressent à toute personne souhaitant engager une démarche de soin psychique, qu’elle traverse une période de mal-être, d’anxiété, de tristesse, de dépression ou toute autre forme de souffrance psychique, qu’elle soit confrontée à un événement traumatique ou à un sentiment plus diffus d’impasse.
+            </p>
+            <p>
+              Lorsque certains symptômes ou difficultés prennent une place importante dans le quotidien et impactent la vie personnelle, affective, scolaire ou professionnelle, la psychothérapie peut offrir un espace de compréhension et d'apaisement.
+            </p>
+            <p>
+              Je propose un cadre confidentiel, bienveillant et sans jugement, où la parole peut se déposer librement et où ce qui fait souffrance peut progressivement être mis en sens et travaillé.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      {/* Tarif et contact */}
+      <section id="tarif-contact" className="border-t border-border/60 bg-secondary/20 scroll-mt-24">
+        <article className="container-narrow py-20 sm:py-28">
+          <header className="text-center max-w-2xl mx-auto">
+            <p className="uppercase tracking-[0.3em] text-accent text-xs">Informations pratiques</p>
+            <h2 className="mt-4 font-serif text-4xl text-foreground text-center">
+              Tarif et contact
+            </h2>
+          </header>
+
+          {/* Tarifs */}
+          <div className="mt-16 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-lg border border-border/60 bg-card p-8">
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">Consultation</p>
+              <h3 className="mt-3 font-serif text-3xl text-foreground">Entretien individuel</h3>
+              <p className="mt-4 font-serif text-5xl text-foreground">
+                60 <span className="text-2xl text-muted-foreground">€</span>
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">La durée des séances peut varier selon la situation clinique et les besoins du patient.</p>
+            </div>
+            <div className="rounded-lg border border-border/60 bg-secondary/40 p-8">
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">Dispositif</p>
+              <h3 className="mt-3 font-serif text-3xl text-foreground">Prise en charge</h3>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80 whitespace-pre-line">
+                Les consultations ne sont actuellement <strong>pas prises en charge</strong> dans le cadre des dispositifs Mon Soutien Psy et Santé Psy Étudiant.
+                {"\n\n"}
+                Néanmoins, elles peuvent parfois être prises en charge par votre complémentaire santé.
+              </p>
+            </div>
+          </div>
+
+          {/* Moyens de paiement + Annulation */}
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-lg border border-border/60 bg-card p-8">
+              <h3 className="font-serif text-2xl text-foreground">Moyens de paiement</h3>
+              <ul className="mt-4 space-y-3 text-sm text-foreground/85">
+                <li className="flex items-center gap-3">
+                  <CreditCard className="h-4 w-4 text-accent" />
+                  Carte bancaire acceptée
+                </li>
+                <li className="flex items-center gap-3">
+                  <Banknote className="h-4 w-4 text-accent" />
+                  Espèce acceptée
+                </li>
+                <li className="flex items-center gap-3 text-muted-foreground">
+                  <XCircle className="h-4 w-4" />
+                  <strong>Chèque non accepté</strong>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg border border-accent/30 bg-accent/5 p-8">
+              <h3 className="font-serif text-2xl text-foreground">Annulation</h3>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/85 whitespace-pre-line">
+                En cas d’empêchement ou d’annulation, merci de prévenir au moins 48h à l’avance afin de permettre à d’autres patients de disposer du créneau horaire.
+                {"\n\n"}
+                Toute absence d’annulation moins de 24h avant la consultation engage le paiement de la séance.
+              </p>
+            </div>
+          </div>
+
+          {/* Cabinet — photos */}
+          <div className="mt-12">
+            <h3 className="font-serif text-3xl text-foreground text-center">Le cabinet</h3>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              <img
+                src={cabinetExterior}
+                alt="Façade extérieure du cabinet"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-lg object-cover aspect-[4/3] shadow-sm"
+              />
+              <img
+                src={cabinetInterior}
+                alt="Intérieur du bureau de consultation"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-lg object-cover aspect-[4/3] shadow-sm"
+              />
+            </div>
+          </div>
+
+          {/* Accès au cabinet */}
+          <div className="mt-12 rounded-lg border border-border/60 bg-card p-8">
+            <h3 className="font-serif text-2xl text-foreground">Accès au cabinet</h3>
+            <div className="mt-4 space-y-3 text-sm text-foreground/85">
+              <p className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                <span>Pôle Santé<br />19 rue de la Forêt<br />67550 Vendenheim</span>
+              </p>
+              <p>
+                Mon bureau se situe au premier étage. Un monte-personne est disponible au sein du Pôle Santé pour les personnes à mobilité réduite.
+              </p>
+              <p>
+                Un parking de stationnement gratuit est disponible devant le Pôle Santé.
+              </p>
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div className="mt-20 rounded-lg bg-primary p-10 text-primary-foreground">
+            <h3 className="font-serif text-3xl text-center">Me contacter</h3>
+            <p className="mt-4 text-center text-sm leading-relaxed text-primary-foreground/80 max-w-2xl mx-auto">
+              Prise de rendez-vous possible par téléphone ou via la plateforme en ligne.
+            </p>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <a
+                href="tel:+33749217835"
+                className="flex items-center gap-4 rounded-md bg-primary-foreground/5 p-5 transition-colors hover:bg-primary-foreground/10"
+              >
+                <Phone className="h-5 w-5" />
+                <div>
+                  <p className="text-xs uppercase tracking-[0.15em] opacity-70">Téléphone</p>
+                  <p className="mt-1 text-sm">07 49 21 78 35</p>
+                </div>
+              </a>
+              <a
+                href="mailto:adelepincemaille.psy@gmail.com"
+                className="flex items-center gap-4 rounded-md bg-primary-foreground/5 p-5 transition-colors hover:bg-primary-foreground/10"
+              >
+                <Mail className="h-5 w-5" />
+                <div>
+                  <p className="text-xs uppercase tracking-[0.15em] opacity-70">Email</p>
+                  <p className="mt-1 text-sm break-all">adelepincemaille.psy@gmail.com</p>
+                </div>
+              </a>
+            </div>
+            <div className="mt-8 text-center">
+              <Link
+                to="/rendez-vous"
+                className="inline-flex items-center justify-center rounded-md bg-primary-foreground px-6 py-3 text-sm font-medium text-primary transition-all hover:bg-primary-foreground/90"
+              >
+                Prendre rendez-vous en ligne
+              </Link>
+            </div>
+          </div>
+        </article>
+      </section>
+    </>
+  );
+}
