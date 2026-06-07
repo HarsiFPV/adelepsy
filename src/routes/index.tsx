@@ -1,12 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, CreditCard, Banknote, XCircle } from "lucide-react";
 import heroTexture from "@/assets/hero-texture.jpg";
-import cabinetInteriorAsset from "@/assets/cabinet-bureau.jpeg.asset.json";
-import cabinetExteriorAsset from "@/assets/cabinet-exterieur.jpeg.asset.json";
-import adelePortraitAsset from "@/assets/adele-portrait.jpg.asset.json";
-const cabinetInterior = cabinetInteriorAsset.url;
-const cabinetExterior = cabinetExteriorAsset.url;
-const adelePortrait = adelePortraitAsset.url;
+import cabinetInterior from "@/assets/cabinet-bureau.jpeg";
+import cabinetExterior from "@/assets/cabinet-exterieur.jpeg";
+import adelePortrait from "@/assets/adele-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,8 +76,11 @@ function HomePage() {
             <img
               src={adelePortrait}
               alt="Portrait d'Adèle Pincemaille, psychologue clinicienne"
-              className="w-full h-auto rounded-lg object-cover shadow-lg"
+              width={3219}
+              height={4838}
+              className="aspect-[2/3] w-full rounded-lg bg-secondary object-cover object-[center_35%] shadow-lg"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -179,18 +179,20 @@ function HomePage() {
               <img
                 src={cabinetExterior}
                 alt="Façade extérieure du cabinet"
-                width={1536}
-                height={1024}
+                width={4032}
+                height={3024}
                 loading="lazy"
-                className="w-full rounded-lg object-cover aspect-[4/3] shadow-sm"
+                decoding="async"
+                className="aspect-[4/3] w-full rounded-lg object-cover object-center shadow-sm"
               />
               <img
                 src={cabinetInterior}
                 alt="Intérieur du bureau de consultation"
-                width={1536}
-                height={1024}
+                width={3945}
+                height={2958}
                 loading="lazy"
-                className="w-full rounded-lg object-cover aspect-[4/3] shadow-sm"
+                decoding="async"
+                className="aspect-[4/3] w-full rounded-lg object-cover object-center shadow-sm"
               />
             </div>
           </div>
