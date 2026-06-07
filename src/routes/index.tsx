@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, CreditCard, Banknote, XCircle } from "lucide-react";
+import { MapPin, CreditCard, Banknote, XCircle } from "lucide-react";
 import heroTexture from "@/assets/hero-texture.jpg";
 import cabinetInterior from "@/assets/cabinet-bureau.jpeg";
 import cabinetExterior from "@/assets/cabinet-exterieur.jpeg";
 import adelePortrait from "@/assets/adele-portrait.jpg";
+import { ContactCard } from "@/components/contact-card";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -221,26 +222,8 @@ function HomePage() {
               Prise de rendez-vous possible par téléphone ou via la plateforme en ligne.
             </p>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              <a
-                href="tel:+33749217835"
-                className="flex items-center gap-4 rounded-md bg-primary-foreground/5 p-5 transition-colors hover:bg-primary-foreground/10"
-              >
-                <Phone className="h-5 w-5" />
-                <div>
-                  <p className="text-xs uppercase tracking-[0.15em] opacity-70">Téléphone</p>
-                  <p className="mt-1 text-sm">07 49 21 78 35</p>
-                </div>
-              </a>
-              <a
-                href="mailto:adelepincemaille.psy@gmail.com"
-                className="flex items-center gap-4 rounded-md bg-primary-foreground/5 p-5 transition-colors hover:bg-primary-foreground/10"
-              >
-                <Mail className="h-5 w-5" />
-                <div>
-                  <p className="text-xs uppercase tracking-[0.15em] opacity-70">Email</p>
-                  <p className="mt-1 text-sm break-all">adelepincemaille.psy@gmail.com</p>
-                </div>
-              </a>
+              <ContactCard type="phone" />
+              <ContactCard type="email" />
             </div>
             <div className="mt-8 text-center">
               <Link

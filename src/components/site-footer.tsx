@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { ContactCard } from "@/components/contact-card";
 
 export function SiteFooter() {
   return (
@@ -18,24 +19,8 @@ export function SiteFooter() {
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
               <span>Pôle Santé<br />19 rue de la Forêt<br />67550 Vendenheim</span>
             </p>
-            <p className="flex items-center gap-3">
-              <Phone className="h-4 w-4 shrink-0 text-accent" />
-              <a
-                href="tel:+33749217835"
-                className="hover:text-accent transition-colors"
-              >
-                07 49 21 78 35
-              </a>
-            </p>
-            <p className="flex items-center gap-3">
-              <Mail className="h-4 w-4 shrink-0 text-accent" />
-              <a
-                href="mailto:adelepincemaille.psy@gmail.com"
-                className="hover:text-accent transition-colors"
-              >
-                adelepincemaille.psy@gmail.com
-              </a>
-            </p>
+            <ContactCard type="phone" variant="compact" />
+            <ContactCard type="email" variant="compact" />
           </div>
 
           <div className="md:text-right">
