@@ -219,7 +219,7 @@ function HomePage() {
           <div className="mt-20 rounded-lg bg-primary p-10 text-primary-foreground">
             <h3 className="font-serif text-3xl text-center">Me contacter</h3>
             <p className="mt-4 text-center text-sm leading-relaxed text-primary-foreground/80 max-w-2xl mx-auto">
-              Prise de rendez-vous possible par téléphone ou via la plateforme en ligne.
+              Pour prendre rendez-vous, veuillez me contacter par e-mail, appel ou SMS.
             </p>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <ContactCard type="phone" />
@@ -230,7 +230,7 @@ function HomePage() {
                 to="/rendez-vous"
                 className="inline-flex items-center justify-center rounded-md bg-primary-foreground px-6 py-3 text-sm font-medium text-primary transition-all hover:bg-primary-foreground/90"
               >
-                Prendre rendez-vous en ligne
+                Prendre rendez-vous
               </Link>
             </div>
           </div>

@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CalendarDays, ExternalLink, Phone } from "lucide-react";
-
-const CALENDAR_URL = "https://app.cal.eu/adelepincemaille-psy-5bqwyr/30min";
-const EMBED_URL = `${CALENDAR_URL}?embed=true&layout=month_view`;
+import { Mail, MessageSquare, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/rendez-vous")({
   head: () => ({
@@ -11,7 +8,7 @@ export const Route = createFileRoute("/rendez-vous")({
       {
         name: "description",
         content:
-          "Prenez rendez-vous en ligne ou par téléphone avec Adèle Pincemaille, psychologue clinicienne à Vendenheim.",
+          "Pour prendre rendez-vous avec Adèle Pincemaille, psychologue clinicienne à Vendenheim, contactez-la par e-mail, appel ou SMS.",
       },
     ],
   }),
@@ -27,64 +24,74 @@ function RendezVousPage() {
           Prendre rendez-vous
         </h1>
         <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-          Consultez les disponibilités et choisissez directement le créneau qui vous convient.
+          Pour prendre rendez-vous, veuillez me contacter par e-mail, appel ou SMS.
         </p>
       </header>
 
-      <div className="mx-auto mt-10 flex max-w-3xl flex-col gap-4 rounded-lg border border-border/60 bg-secondary/40 p-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-4">
-          <div className="rounded-full bg-accent/15 p-3">
-            <Phone className="h-5 w-5 text-accent" aria-hidden="true" />
+      <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+        <div className="rounded-xl border border-border/60 bg-card p-6 shadow-sm sm:p-8">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-accent/15 p-3">
+              <Phone className="h-5 w-5 text-accent" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">Téléphone</p>
+              <a
+                href="tel:+33749217835"
+                className="mt-1 block font-serif text-2xl text-foreground transition-colors hover:text-accent"
+              >
+                07 49 21 78 35
+              </a>
+            </div>
           </div>
-          <div>
-            <p className="font-serif text-lg text-foreground">Vous préférez appeler ?</p>
-            <p className="text-sm text-muted-foreground">
-              Laissez un message si nécessaire, je vous rappellerai.
-            </p>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Laissez-moi un message si nécessaire, je vous rappellerai.
+          </p>
+          <div className="mt-6 grid gap-3">
+            <a
+              href="tel:+33749217835"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              Appeler
+            </a>
+            <a
+              href="sms:+33749217835"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            >
+              <MessageSquare className="h-4 w-4" aria-hidden="true" />
+              Envoyer un SMS
+            </a>
           </div>
         </div>
-        <a
-          href="tel:+33749217835"
-          className="inline-flex shrink-0 items-center justify-center rounded-md border border-input bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-        >
-          07 49 21 78 35
-        </a>
-      </div>
 
-      <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-xl border border-border/60 bg-card shadow-sm">
-        <div className="flex items-center gap-3 border-b border-border/60 px-5 py-4 sm:px-7">
-          <div className="rounded-full bg-accent/15 p-2.5">
-            <CalendarDays className="h-5 w-5 text-accent" aria-hidden="true" />
+        <div className="rounded-xl border border-border/60 bg-card p-6 shadow-sm sm:p-8">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-accent/15 p-3">
+              <Mail className="h-5 w-5 text-accent" aria-hidden="true" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">E-mail</p>
+              <a
+                href="mailto:adelepincemaille.psy@gmail.com"
+                className="mt-1 block break-all font-serif text-xl text-foreground transition-colors hover:text-accent sm:text-2xl"
+              >
+                adelepincemaille.psy@gmail.com
+              </a>
+            </div>
           </div>
-          <div>
-            <h2 className="font-serif text-xl text-foreground">Choisir un créneau</h2>
-            <p className="text-sm text-muted-foreground">
-              La réservation est confirmée directement dans l’agenda.
-            </p>
-          </div>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Écrivez-moi pour convenir ensemble d’un rendez-vous.
+          </p>
+          <a
+            href="mailto:adelepincemaille.psy@gmail.com"
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            <Mail className="h-4 w-4" aria-hidden="true" />
+            Envoyer un e-mail
+          </a>
         </div>
-
-        <iframe
-          src={EMBED_URL}
-          title="Agenda de prise de rendez-vous d’Adèle Pincemaille"
-          className="h-[760px] w-full bg-white sm:h-[820px]"
-          loading="eager"
-          allow="payment"
-        />
       </div>
-
-      <p className="mx-auto mt-5 max-w-2xl text-center text-sm text-muted-foreground">
-        L’agenda ne s’affiche pas ?{" "}
-        <a
-          href={CALENDAR_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1 font-medium text-accent underline-offset-4 hover:underline"
-        >
-          Ouvrir la réservation dans un nouvel onglet
-          <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-        </a>
-      </p>
     </section>
   );
 }

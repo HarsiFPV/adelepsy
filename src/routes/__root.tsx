@@ -76,7 +76,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Adèle Pincemaille, psychologue clinicienne à Vendenheim (67550). Accompagnement des adultes, adolescents et enfants à partir de 12 ans. Prise de rendez-vous en ligne.",
+          "Adèle Pincemaille, psychologue clinicienne à Vendenheim (67550). Accompagnement des adultes, adolescents et enfants à partir de 12 ans. Prise de rendez-vous par e-mail, appel ou SMS.",
       },
       { name: "author", content: "Adèle Pincemaille" },
       { property: "og:title", content: "Adèle Pincemaille — Psychologue clinicienne" },
